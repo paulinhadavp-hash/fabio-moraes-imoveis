@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sansa, Rua São Salvador 45, Flamengo | Lançamento Residencial</title>
+<meta name="description" content="Sansa: 26 unidades entre studios, apartamentos de 2 quartos e coberturas, ao lado da Praça São Salvador, no Flamengo. Fale com Fabio Moraes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,480;0,9..144,600;1,9..144,420&family=Public+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* ===== Token system: "dusk over Guanabara" ===== */
+    --dusk:      #12262B;   /* deep teal-navy, the bay at dusk */
+    --dusk-2:    #0C1B1F;   /* darker layer for depth */
+    --sand:      #F3EAD9;   /* warm sand, light surfaces */
+    --sand-dim:  #E7DBC4;
+    --terracotta:#D9713C;   /* sunset accent, the one bright note */
+    --marx:      #3E6259;   /* Burle Marx garden green */
+    --ink:       #1B1B18;   /* text on light */
+
+    --display: 'Fraunces', serif;
+    --body: 'Public Sans', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+
+    --container: 1180px;
+    --edge: clamp(1.25rem, 4vw, 3.5rem);
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--sand);
+    color:var(--ink);
+    font-family:var(--body);
+    font-weight:400;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; }
+  h1,h2,h3{ font-family:var(--display); margin:0; font-weight:600; letter-spacing:-0.01em; }
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:0.72rem;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--marx);
+  }
+  .eyebrow.on-dark{ color:var(--sand-dim); opacity:.85; }
+
+  .wrap{ max-width:var(--container); margin:0 auto; padding-left:var(--edge); padding-right:var(--edge); }
+
+  /* ---------- focus ---------- */
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--terracotta);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+
+  /* ---------- reduced motion ---------- */
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important; }
+  }
+
+  /* ================= NAV ================= */
+  .nav{
+    position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:1.1rem var(--edge);
+    color:var(--sand);
+    transition:background .4s ease, padding .4s ease, box-shadow .4s ease;
+  }
+  .nav.scrolled{
+    background:rgba(18,38,43,0.92);
+    -webkit-backdrop-filter:blur(8px);
+    backdrop-filter:blur(8px);
+    padding-top:0.75rem; padding-bottom:0.75rem;
+    box-shadow:0 1px 0 rgba(243,234,217,0.08);
+  }
+  .nav__mark{
+    font-family:var(--display); font-weight:600; font-size:1.35rem;
+    letter-spacing:0.02em;
+  }
+  .nav__mark span{ color:var(--terracotta); }
+  .nav__links{ display:flex; align-items:center; gap:2rem; }
+  .nav__links a{
+    font-size:0.85rem; text-decoration:none; color:var(--sand);
+    opacity:.85; letter-spacing:0.02em;
+  }
+  .nav__links a:hover{ opacity:1; }
+  .nav__cta{
+    display:inline-flex; align-items:center; gap:.5rem;
+    background:var(--terracotta); color:var(--sand)!important;
+    padding:.55rem 1.1rem; border-radius:100px;
+    font-size:.82rem; font-weight:500; text-decoration:none;
+    opacity:1 !important;
+    transition:transform .2s ease, background .2s ease;
+  }
+  .nav__cta:hover{ background:#c76230; transform:translateY(-1px); }
+  .nav__toggle{ display:none; background:none; border:0; color:var(--sand); font-size:1.5rem; cursor:pointer; }
+
+  @media (max-width:820px){
+    .nav__links{
+      position:fixed; inset:0 0 0 auto; width:min(78vw,320px);
+      background:var(--dusk); flex-direction:column; align-items:flex-start;
+      padding:6rem 2rem 2rem; gap:1.5rem;
+      transform:translateX(100%); transition:transform .35s ease;
+    }
+    .nav__links.open{ transform:translateX(0); }
+    .nav__toggle{ display:block; }
+  }
+
+  /* ================= HERO ================= */
+  .hero{
+    position:relative; height:100svh; min-height:560px;
+    overflow:hidden; color:var(--sand);
+    display:flex; align-items:flex-end;
+  }
+  .hero__layer{
+    position:absolute; inset:0; background-size:cover; background-position:center;
+    animation: kenburns 22s ease-in-out infinite alternate;
+  }
+  .hero__layer--sugarloaf{
+    background-image:url('https://images.pexels.com/photos/34692550/pexels-photo-34692550.jpeg?auto=compress&cs=tinysrgb&w=1920');
+    animation-name: kenburns, revealSugarloaf;
+    animation-duration: 22s, 1s;
+    animation-iteration-count: infinite, 1;
+    animation-fill-mode: none, forwards;
+    animation-delay: 0s, 6.5s;
+  }
+  .hero__layer--facade{
+    background-image:url('https://apetopia.com.br/wp-content/uploads/2026/07/sansa_fachada.jpg');
+    opacity:0;
+    animation-name: kenburns, revealFacade;
+    animation-duration: 26s, 1.6s;
+    animation-iteration-count: infinite, 1;
+    animation-fill-mode: none, forwards;
+    animation-delay: 0s, 6.5s;
+  }
+  @keyframes kenburns{ from{ transform:scale(1.04); } to{ transform:scale(1.16); } }
+  @keyframes revealSugarloaf{ to{ opacity:0; } }
+  @keyframes revealFacade{ to{ opacity:1; } }
+
+  @media (prefers-reduced-motion: reduce){
+    .hero__layer--sugarloaf{ opacity:0; }
+    .hero__layer--facade{ opacity:1; }
+  }
+
+  .hero__scrim{
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(12,27,31,.55) 0%, rgba(12,27,31,.15) 38%, rgba(12,27,31,.35) 65%, rgba(12,27,31,.92) 100%);
+  }
+  .hero__content{ position:relative; z-index:2; padding:0 var(--edge) clamp(2.5rem,6vw,4.5rem); width:100%; }
+  .hero__kicker{
+    font-family:var(--mono); font-size:.78rem; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--sand); opacity:0; animation:fadeUp .9s ease forwards; animation-delay:.3s;
+  }
+  .hero h1{
+    font-size:clamp(2.2rem, 8vw, 5.4rem); line-height:1.02; margin:.5rem 0 1rem;
+    max-width:16ch;
+    opacity:0; animation:fadeUp 1s ease forwards; animation-delay:.5s;
+  }
+  .hero h1 em{ font-style:italic; color:var(--terracotta); font-weight:400; }
+  .hero__sub{
+    max-width:42ch; font-size:1.05rem; color:var(--sand-dim);
+    opacity:0; animation:fadeUp 1s ease forwards; animation-delay:.75s;
+  }
+  .hero__ctas{
+    display:flex; flex-wrap:wrap; gap:.9rem; margin-top:1.75rem;
+    opacity:0; animation:fadeUp 1s ease forwards; animation-delay:1s;
+  }
+  @keyframes fadeUp{ from{ opacity:0; transform:translateY(16px);} to{ opacity:1; transform:translateY(0);} }
+
+  .btn{
+    display:inline-flex; align-items:center; gap:.6rem;
+    padding:.9rem 1.5rem; border-radius:100px; text-decoration:none;
+    font-size:.92rem; font-weight:500; letter-spacing:.01em;
+    transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+  }
+  .btn--solid{ background:var(--terracotta); color:var(--sand); }
+  .btn--solid:hover{ transform:translateY(-2px); box-shadow:0 10px 24px rgba(217,113,60,.35); }
+  .btn--ghost{ border:1px solid rgba(243,234,217,.45); color:var(--sand); }
+  .btn--ghost:hover{ border-color:var(--sand); background:rgba(243,234,217,.08); }
+  .btn svg{ width:18px; height:18px; flex:none; }
+
+  .hero__scroll{
+    position:absolute; right:var(--edge); bottom:2.2rem; z-index:2;
+    display:flex; flex-direction:column; align-items:center; gap:.5rem;
+    color:var(--sand-dim); font-family:var(--mono); font-size:.68rem; letter-spacing:.14em;
+    text-transform:uppercase;
+  }
+  .hero__scroll .line{ width:1px; height:34px; background:linear-gradient(180deg, var(--terracotta), transparent); animation:scrollpulse 1.8s ease-in-out infinite; }
+  @keyframes scrollpulse{ 0%,100%{ opacity:.3;} 50%{ opacity:1;} }
+  @media (max-width:600px){ .hero__scroll{ display:none; } }
+
+  /* ================= FICHA STRIP ================= */
+  .factstrip{
+    background:var(--dusk); color:var(--sand);
+    font-family:var(--mono); font-size:.82rem;
+    padding:1rem var(--edge);
+    display:flex; flex-wrap:wrap; gap:.4rem 2.2rem; justify-content:center;
+    border-bottom:1px solid rgba(243,234,217,.12);
+  }
+  .factstrip span{ opacity:.9; }
+  .factstrip b{ color:var(--terracotta); font-weight:500; }
+  @media (max-width:560px){ .factstrip{ font-size:.68rem; gap:.35rem 1rem; padding:.85rem 1.1rem; justify-content:flex-start; } }
+
+  /* ================= SECTION SHELL ================= */
+  section{ position:relative; }
+  .section-pad{ padding:clamp(4rem,9vw,7rem) 0; }
+  .section-pad--tight{ padding:clamp(3rem,6vw,4.5rem) 0; }
+
+  .reveal{ opacity:0; transform:translateY(28px); transition:opacity .8s ease, transform .8s ease; }
+  .reveal.is-visible{ opacity:1; transform:translateY(0); }
+
+  /* ================= INTRO / ABOUT ================= */
+  .about{ display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(2rem,5vw,4.5rem); align-items:center; }
+  .about__media{ position:relative; border-radius:6px; overflow:hidden; aspect-ratio:4/5; }
+  .about__media img{ width:100%; height:100%; object-fit:cover; }
+  .about__media::after{
+    content:''; position:absolute; inset:0; border:1px solid rgba(27,27,24,.08); border-radius:6px;
+  }
+  .about h2{ font-size:clamp(1.9rem,3.6vw,2.7rem); line-height:1.08; margin-bottom:1.1rem; }
+  .about p{ color:#4b4a44; font-size:1.02rem; max-width:46ch; }
+  .about p + p{ margin-top:1rem; }
+  .about__stat-row{ display:flex; gap:2.5rem; margin-top:2rem; flex-wrap:wrap; }
+  .stat b{ display:block; font-family:var(--display); font-size:2rem; color:var(--marx); }
+  .stat span{ font-family:var(--mono); font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:#6b6a62; }
+
+  /* ================= TIPOLOGIAS ================= */
+  .tipologias{ background:var(--sand-dim); }
+  .section-head{ max-width:640px; margin-bottom:3rem; }
+  .section-head h2{ font-size:clamp(1.9rem,3.6vw,2.7rem); margin:.6rem 0 1rem; }
+  .section-head p{ color:#4b4a44; max-width:52ch; }
+
+  .plans{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+  .plan-card{
+    background:var(--sand); border-radius:8px; padding:2rem 1.75rem;
+    border:1px solid rgba(27,27,24,.08);
+    display:flex; flex-direction:column; gap:1rem;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .plan-card:hover{ transform:translateY(-6px); box-shadow:0 18px 32px rgba(27,27,24,.08); }
+  .plan-card__icon{ width:46px; height:46px; color:var(--marx); }
+  .plan-card h3{ font-size:1.3rem; }
+  .plan-card__meta{ font-family:var(--mono); font-size:.78rem; color:var(--terracotta); letter-spacing:.02em; }
+  .plan-card p{ color:#5b5a52; font-size:.92rem; margin:0; }
+  .plan-card__specs{ display:flex; gap:1.2rem; margin-top:auto; padding-top:1rem; border-top:1px dashed rgba(27,27,24,.15); }
+  .plan-card__specs div{ font-family:var(--mono); font-size:.72rem; color:#6b6a62; }
+  .plan-card__specs b{ display:block; font-family:var(--body); font-weight:600; font-size:.95rem; color:var(--ink); }
+
+  @media (max-width:900px){ .plans{ grid-template-columns:1fr; } .about{ grid-template-columns:1fr; } .about__media{ order:-1; aspect-ratio:16/10; } }
+
+  /* ================= LAZER ================= */
+  .lazer{ background:var(--dusk); color:var(--sand); overflow:hidden; }
+  .lazer__grid{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,5vw,4rem); align-items:center; }
+  .lazer__media{ border-radius:6px; overflow:hidden; aspect-ratio:4/3; }
+  .lazer__media img{ width:100%; height:100%; object-fit:cover; }
+  .amenities{ list-style:none; margin:1.75rem 0 0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:.85rem 1.5rem; }
+  .amenities li{ display:flex; align-items:center; gap:.65rem; font-size:.95rem; color:var(--sand-dim); }
+  .amenities li svg{ width:18px; height:18px; color:var(--terracotta); flex:none; }
+  @media (max-width:820px){ .lazer__grid{ grid-template-columns:1fr; } .amenities{ grid-template-columns:1fr 1fr; } }
+
+  /* ================= SIGNATURE MOSAIC DIVIDER ================= */
+  .mosaic{ position:relative; height:140px; background:var(--sand); overflow:hidden; }
+  .mosaic svg{ width:100%; height:100%; display:block; }
+  .mosaic path{
+    fill:none; stroke:var(--marx); stroke-width:3;
+    stroke-dasharray:1400; stroke-dashoffset:1400;
+    transition:stroke-dashoffset 1.6s cubic-bezier(.2,.7,.2,1);
+  }
+  .mosaic.is-visible path{ stroke-dashoffset:0; }
+  .mosaic path.p2{ stroke:var(--terracotta); stroke-width:2; opacity:.7; }
+
+  /* ================= LOCALIZAÇÃO ================= */
+  .local{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,5vw,4rem); align-items:start; }
+  .local__map{ border-radius:8px; overflow:hidden; border:1px solid rgba(27,27,24,.1); aspect-ratio:1/1; }
+  .local__map iframe{ width:100%; height:100%; border:0; filter:grayscale(.15) contrast(1.05); }
+  .local h2{ font-size:clamp(1.9rem,3.6vw,2.7rem); margin:.6rem 0 1.2rem; }
+  .local p{ color:#4b4a44; max-width:46ch; }
+  .local__list{ list-style:none; margin:1.75rem 0 0; padding:0; border-top:1px solid rgba(27,27,24,.1); }
+  .local__list li{
+    display:flex; justify-content:space-between; gap:1rem;
+    padding:.95rem 0; border-bottom:1px solid rgba(27,27,24,.1);
+    font-size:.95rem;
+  }
+  .local__list span:first-child{ color:var(--ink); }
+  .local__list span:last-child{ font-family:var(--mono); font-size:.78rem; color:var(--marx); white-space:nowrap; }
+  @media (max-width:900px){ .local{ grid-template-columns:1fr; } }
+  @media (max-width:560px){ .local__map{ aspect-ratio:4/3; } }
+
+  /* ================= FICHA TÉCNICA ================= */
+  .ficha{ background:var(--sand-dim); }
+  .ficha__grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:2rem 1.5rem; }
+  .ficha__item span{ display:block; font-family:var(--mono); font-size:.7rem; text-transform:uppercase; letter-spacing:.08em; color:var(--marx); margin-bottom:.4rem; }
+  .ficha__item b{ font-family:var(--display); font-weight:600; font-size:1.15rem; }
+  @media (max-width:820px){ .ficha__grid{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:520px){ .ficha__grid{ grid-template-columns:1fr; } }
+
+  /* ================= CTA FINAL ================= */
+  .cta-final{
+    background:linear-gradient(135deg, var(--terracotta), #b8542a);
+    color:var(--sand); text-align:center;
+  }
+  .cta-final .wrap{ max-width:760px; }
+  .cta-final h2{ font-size:clamp(2rem,4.5vw,3.2rem); margin-bottom:1rem; }
+  .cta-final p{ opacity:.92; font-size:1.05rem; max-width:46ch; margin:0 auto; }
+  .cta-final .hero__ctas{ justify-content:center; margin-top:2.2rem; opacity:1; animation:none; }
+  .cta-final .btn--ghost{ border-color:rgba(243,234,217,.6); }
+  .cta-final .btn--ghost:hover{ background:rgba(243,234,217,.12); }
+
+  /* ================= FOOTER ================= */
+  footer{ background:var(--dusk-2); color:var(--sand-dim); font-size:.85rem; }
+  .footer__grid{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:2rem; padding:2.5rem 0 1.5rem; }
+  .footer__mark{ font-family:var(--display); font-size:1.3rem; color:var(--sand); }
+  .footer__contact a{ text-decoration:none; color:var(--sand-dim); }
+  .footer__contact a:hover{ color:var(--sand); }
+  .footer__note{ border-top:1px solid rgba(243,234,217,.1); padding:1.25rem 0 2rem; font-size:.75rem; opacity:.6; }
+
+  /* ================= FLOATING WHATSAPP ================= */
+  .float-wa{
+    position:fixed; right:1.4rem; bottom:1.4rem; z-index:60;
+    width:58px; height:58px; border-radius:50%;
+    background:#25D366; color:#fff; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 10px 24px rgba(0,0,0,.25); text-decoration:none;
+    transition:transform .2s ease;
+  }
+  .float-wa:hover{ transform:scale(1.08); }
+  .float-wa svg{ width:28px; height:28px; }
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav__mark">SANSA<span>.</span></div>
+  <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+  <div class="nav__links" id="navLinks">
+    <a href="#sobre">O bairro</a>
+    <a href="#plantas">Plantas</a>
+    <a href="#lazer">Lazer</a>
+    <a href="#localizacao">Localização</a>
+    <a class="nav__cta" href="https://wa.me/5521981716003?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Sansa%2C%20Rua%20S%C3%A3o%20Salvador%2C%2045%2C%20Flamengo" target="_blank" rel="noopener">Falar no WhatsApp</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero__layer hero__layer--sugarloaf"></div>
+  <div class="hero__layer hero__layer--facade"></div>
+  <div class="hero__scrim"></div>
+  <div class="hero__content">
+    <p class="hero__kicker">Lançamento · Rua São Salvador, 45 · Flamengo</p>
+    <h1>A vista que o Rio inteiro reconhece.<br>Agora, <em>à sua porta.</em></h1>
+    <p class="hero__sub">26 unidades entre studios, apartamentos de 2 quartos e coberturas, a poucos passos da Praça São Salvador, um dos endereços mais tradicionais da Zona Sul.</p>
+    <div class="hero__ctas">
+      <a class="btn btn--solid" href="https://wa.me/5521981716003?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Sansa%2C%20Rua%20S%C3%A3o%20Salvador%2C%2045%2C%20Flamengo" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2zm0 18.2h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.24 8.24 0 1 1 15.32-4.38 8.25 8.25 0 0 1-8.33 8.24zm4.53-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.4-.12-.56.13-.17.25-.65.81-.79.97-.15.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.7-.15-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08s.89 2.41 1.02 2.58c.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.29z"/></svg>
+        Falar com Fabio agora
+      </a>
+      <a class="btn btn--ghost" href="#plantas">Ver plantas</a>
+    </div>
+  </div>
+  <div class="hero__scroll" aria-hidden="true"><span>Role</span><span class="line"></span></div>
+</header>
+
+<div class="factstrip">
+  <span><b>26</b> unidades</span>
+  <span><b>8</b> pavimentos</span>
+  <span><b>33 a 100 m²</b> studios a coberturas</span>
+  <span><b>1 quadra</b> da Praça São Salvador</span>
+  <span>Condições sob consulta</span>
+</div>
+
+<main>
+
+  <section id="sobre" class="section-pad">
+    <div class="wrap about reveal">
+      <div>
+        <p class="eyebrow">O endereço</p>
+        <h2>Flamengo é praça, é sombra de árvore, é vizinho que te reconhece.</h2>
+        <p>A Rua São Salvador liga Flamengo e Laranjeiras e desemboca direto na Praça São Salvador, ponto de encontro do bairro desde sempre, com feiras de fim de semana, cafés e rodas na calçada. É esse cotidiano que o Sansa ocupa: um edifício de porte pequeno, com 26 unidades em 8 pavimentos, pensado para quem quer resolver a vida a pé.</p>
+        <p>O metrô Flamengo, o Largo do Machado e o Aterro do Flamengo, com sua orla, ciclovias e vista para a Baía de Guanabara, ficam a poucos minutos de caminhada.</p>
+        <div class="about__stat-row">
+          <div class="stat"><b>403,77 m²</b><span>Área do terreno</span></div>
+          <div class="stat"><b>1 bloco</b><span>Condomínio compacto</span></div>
+          <div class="stat"><b>2026</b><span>Lançamento</span></div>
+        </div>
+      </div>
+      <div class="about__media">
+        <img src="https://apetopia.com.br/wp-content/uploads/2026/07/sansa_varanda_jardim.jpg" alt="Varanda com jardim de uma unidade do Sansa, Flamengo" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section id="plantas" class="tipologias section-pad">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Tipologias</p>
+        <h2>Três formas de morar, um mesmo endereço.</h2>
+        <p>Do studio compacto à cobertura linear com terraço próprio, cada planta foi desenhada para privilegiar luz natural e integração entre ambientes.</p>
+      </div>
+      <div class="plans reveal">
+
+        <article class="plan-card">
+          <svg class="plan-card__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="6" width="36" height="36" rx="2"/><line x1="6" y1="26" x2="28" y2="26"/><line x1="28" y1="6" x2="28" y2="26"/></svg>
+          <div>
+            <h3>Studio</h3>
+            <p class="plan-card__meta">13 unidades</p>
+          </div>
+          <p>Planta compacta e funcional para quem valoriza mobilidade e localização acima de metragem.</p>
+          <div class="plan-card__specs">
+            <div><b>até 33 m²</b>Área privativa</div>
+            <div><b>1</b>Ambiente integrado</div>
+          </div>
+        </article>
+
+        <article class="plan-card">
+          <svg class="plan-card__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="6" width="36" height="36" rx="2"/><line x1="24" y1="6" x2="24" y2="42"/><line x1="24" y1="24" x2="42" y2="24"/></svg>
+          <div>
+            <h3>2 quartos</h3>
+            <p class="plan-card__meta">11 unidades</p>
+          </div>
+          <p>Ambientes mais amplos para o dia a dia, com vaga de garagem inclusa.</p>
+          <div class="plan-card__specs">
+            <div><b>até 70 m²</b>Área privativa</div>
+            <div><b>1</b>Vaga de garagem</div>
+          </div>
+        </article>
+
+        <article class="plan-card">
+          <svg class="plan-card__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="6" width="36" height="26" rx="2"/><path d="M6 32h36v10H6z" opacity=".4"/><line x1="24" y1="6" x2="24" y2="32"/></svg>
+          <div>
+            <h3>Cobertura linear</h3>
+            <p class="plan-card__meta">2 unidades</p>
+          </div>
+          <p>As maiores plantas do Sansa, com terraço próprio e três dormitórios.</p>
+          <div class="plan-card__specs">
+            <div><b>até 100 m²</b>Área privativa</div>
+            <div><b>2</b>Vagas de garagem</div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="mosaic reveal" aria-hidden="true">
+    <svg viewBox="0 0 1200 140" preserveAspectRatio="none">
+      <path class="p1" d="M0,90 C120,20 220,160 340,90 C460,20 560,160 680,90 C800,20 900,160 1020,90 C1100,45 1150,110 1200,90"/>
+      <path class="p2" d="M0,110 C140,60 240,150 360,110 C480,70 580,150 700,110 C820,70 920,150 1040,110 C1120,85 1160,125 1200,110"/>
+    </svg>
+  </div>
+
+  <section id="lazer" class="lazer section-pad">
+    <div class="wrap lazer__grid reveal">
+      <div class="lazer__media">
+        <img src="https://apetopia.com.br/wp-content/uploads/2026/07/sansa_varanda_gourmet.jpg" alt="Espaço gourmet do Sansa, Flamengo" loading="lazy">
+      </div>
+      <div>
+        <p class="eyebrow on-dark">Lazer</p>
+        <h2>Comodidade sem sair de casa.</h2>
+        <p style="color:var(--sand-dim); max-width:44ch; margin-top:.75rem;">Um condomínio pequeno não abre mão de infraestrutura: os ambientes comuns do Sansa foram pensados para o dia a dia, sem grandes deslocamentos.</p>
+        <ul class="amenities">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 17c1.5 1.5 3 1.5 4.5 0s3-1.5 4.5 0 3 1.5 4.5 0 3-1.5 4.5 0M4 12V5h16v7"/></svg>Piscina</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Spa</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 7v10M18 7v10M2 10v4M22 10v4M6 12h12"/></svg>Academia</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-6h6v6"/></svg>Espaço gourmet</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="14" rx="1"/><path d="M8 21h8M12 18v3"/></svg>Coworking</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="8" width="16" height="12" rx="1"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>Espaço delivery</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 10h18M6 10V6h12v4M4 10v10h16V10"/></svg>Mini market</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3"/><path d="M6 21c0-4 3-6 6-6s6 2 6 6"/></svg>Pet shower</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 18h4l3-9h3M9 18l3-9-3-3H6"/></svg>Bicicletário</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="localizacao" class="section-pad">
+    <div class="wrap local reveal">
+      <div>
+        <p class="eyebrow">Localização</p>
+        <h2>Rua São Salvador, 45.</h2>
+        <p>Ao lado da Praça São Salvador, entre Flamengo e Laranjeiras, com supermercados, farmácias, escolas e restaurantes a poucos passos, e o Centro, Botafogo e Copacabana a poucos minutos.</p>
+        <ul class="local__list">
+          <li><span>Praça São Salvador</span><span>2 min a pé</span></li>
+          <li><span>Metrô Flamengo</span><span>8 min a pé</span></li>
+          <li><span>Largo do Machado</span><span>10 min a pé</span></li>
+          <li><span>Aterro do Flamengo</span><span>12 min a pé</span></li>
+          <li><span>Botafogo</span><span>10 min de carro</span></li>
+        </ul>
+      </div>
+      <div class="local__map">
+        <iframe src="https://maps.google.com/maps?q=Rua%20S%C3%A3o%20Salvador%2C%2045%2C%20Flamengo%2C%20Rio%20de%20Janeiro&t=m&z=16&output=embed" title="Mapa: Rua São Salvador, 45, Flamengo" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="ficha section-pad">
+    <div class="wrap reveal">
+      <div class="section-head" style="margin-bottom:2.25rem;">
+        <p class="eyebrow">Ficha técnica</p>
+        <h2 style="font-size:clamp(1.6rem,3vw,2.1rem);">Quem constrói o Sansa.</h2>
+      </div>
+      <div class="ficha__grid">
+        <div class="ficha__item"><span>Incorporação</span><b>IMV Empreendimentos</b></div>
+        <div class="ficha__item"><span>Construção</span><b>Kadima</b></div>
+        <div class="ficha__item"><span>Arquitetura de fachada e interiores</span><b>PKB Arquitetura</b></div>
+        <div class="ficha__item"><span>Projeto legal</span><b>OCTO Arquitetura</b></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-final section-pad">
+    <div class="wrap reveal">
+      <p class="eyebrow on-dark" style="color:rgba(243,234,217,.85);">Condições sob consulta</p>
+      <h2>Ainda não temos a tabela de valores publicada.</h2>
+      <p>Fale direto com Fabio Moraes para receber a tabela atualizada, plantas completas e condições de pagamento do Sansa.</p>
+      <div class="hero__ctas">
+        <a class="btn btn--solid" style="background:var(--dusk);" href="https://wa.me/5521981716003?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Sansa%2C%20Rua%20S%C3%A3o%20Salvador%2C%2045%2C%20Flamengo" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2zm0 18.2h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.24 8.24 0 1 1 15.32-4.38 8.25 8.25 0 0 1-8.33 8.24zm4.53-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.4-.12-.56.13-.17.25-.65.81-.79.97-.15.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.7-.15-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08s.89 2.41 1.02 2.58c.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.29z"/></svg>
+          (21) 98171-6003
+        </a>
+        <a class="btn btn--ghost" href="mailto:corretorfabio.moraes@hotmail.com">corretorfabio.moraes@hotmail.com</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer__grid">
+    <div>
+      <div class="footer__mark">SANSA</div>
+      <p style="margin:.4rem 0 0; max-width:32ch; opacity:.75;">Rua São Salvador, 45, Flamengo, Rio de Janeiro.</p>
+    </div>
+    <div class="footer__contact">
+      <p style="margin:0 0 .4rem;"><a href="https://wa.me/5521981716003" target="_blank" rel="noopener">(21) 98171-6003</a></p>
+      <p style="margin:0;"><a href="mailto:corretorfabio.moraes@hotmail.com">corretorfabio.moraes@hotmail.com</a></p>
+    </div>
+  </div>
+  <div class="wrap footer__note">
+    Imagens meramente ilustrativas. Metragens, condições e valores sujeitos a confirmação junto ao corretor responsável.
+  </div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/5521981716003?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Sansa%2C%20Rua%20S%C3%A3o%20Salvador%2C%2045%2C%20Flamengo" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2zm0 18.2h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.24 8.24 0 1 1 15.32-4.38 8.25 8.25 0 0 1-8.33 8.24zm4.53-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.4-.12-.56.13-.17.25-.65.81-.79.97-.15.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.7-.15-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08s.89 2.41 1.02 2.58c.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.29z"/></svg>
+</a>
+
+<script>
+  // Nav scroll state
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Mobile menu
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    toggle.textContent = open ? '✕' : '☰';
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    links.classList.remove('open');
+    toggle.setAttribute('aria-expanded', false);
+    toggle.textContent = '☰';
+  }));
+
+  // Scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-visible'); });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal, .mosaic').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>

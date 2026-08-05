@@ -32,7 +32,7 @@
 <meta name="description" content="By Breton, na quadra da praia da Barra da Tijuca. 47 unidades, apenas 3 por andar. O primeiro Branded Residence da Breton no Brasil. Fale com Fabio Moraes.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400&family=Jost:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Jost:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
     /* ===== Token system: "grife à beira-mar" ===== */
@@ -47,7 +47,7 @@
     --text-dim:#6E6656;
 
 
-    --display: 'Bodoni Moda', serif;
+    --display: 'Fraunces', serif;
     --body: 'Jost', sans-serif;
     --mono: 'IBM Plex Mono', monospace;
 
@@ -332,19 +332,35 @@
   .float-wa:hover{ transform:scale(1.08); }
   .float-wa svg{ width:28px; height:28px; }
 
-  /* ============= GALERIA ============= */
-  .gallery-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:.5rem; margin-top:3rem; }
-  .gallery-item{ position:relative; overflow:hidden; aspect-ratio:4/5; margin:0; }
-  .gallery-item--wide{ grid-column:span 2; aspect-ratio:8/5; }
-  .gallery-item img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .6s ease; }
-  .gallery-item:hover img{ transform:scale(1.05); }
-  .gallery-item figcaption{
-    position:absolute; left:0; right:0; bottom:0; padding:.9rem 1rem;
-    font-family:var(--mono); font-size:.68rem; letter-spacing:.12em; text-transform:uppercase;
-    color:var(--paper); background:linear-gradient(0deg, rgba(20,16,13,.75) 0%, rgba(20,16,13,0) 100%);
+  /* ============= TOPBAR ============= */
+  .topbar{
+    background:var(--ink); color:var(--bronze-l); font-family:var(--mono); font-size:.66rem;
+    letter-spacing:.14em; text-transform:uppercase; text-align:center;
+    padding:.55rem var(--edge); position:fixed; top:0; left:0; right:0; z-index:55;
+    border-bottom:1px solid rgba(250,248,244,.12);
   }
-  @media (max-width:900px){
-    .gallery-grid{ grid-template-columns:repeat(2,1fr); }
+  .nav{ top:2.15rem; }
+  .hero, main{ margin-top:0; }
+  @media (max-width:560px){
+    .topbar{ font-size:.58rem; letter-spacing:.08em; padding:.5rem .8rem; line-height:1.3; }
+  }
+
+  /* ============= GALERIA / CARROSSEL ============= */
+  .gallery-carousel{ position:relative; overflow:hidden; margin-top:3rem; aspect-ratio:16/9; background:var(--ink); }
+  .gallery-track{ display:flex; height:100%; width:100%; transition:transform .8s cubic-bezier(.65,0,.35,1); }
+  .gallery-slide{ position:relative; flex:0 0 100%; height:100%; margin:0; }
+  .gallery-slide img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .gallery-slide figcaption{
+    position:absolute; left:0; right:0; bottom:0; padding:1.6rem 2rem;
+    font-family:var(--mono); font-size:.74rem; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--paper); background:linear-gradient(0deg, rgba(20,16,13,.82) 0%, rgba(20,16,13,0) 100%);
+  }
+  .gallery-dots{ position:absolute; left:0; right:0; bottom:1.1rem; display:flex; justify-content:center; gap:.55rem; z-index:2; }
+  .gallery-dot{ width:8px; height:8px; border-radius:50%; border:1px solid var(--paper); background:transparent; padding:0; cursor:pointer; transition:background .3s ease; }
+  .gallery-dot.is-active{ background:var(--paper); }
+  @media (max-width:700px){
+    .gallery-carousel{ aspect-ratio:4/5; }
+    .gallery-slide figcaption{ padding:1.1rem 1.3rem; font-size:.66rem; }
   }
 
   /* ============= VIDEO TOUR ============= */
@@ -354,6 +370,8 @@
 </head>
 <body>
 
+
+<div class="topbar">Branded Residence Breton &middot; Quadra da praia &middot; 135 a 290 m&sup2; &middot; Poucas unidades</div>
 
 <nav class="nav" id="nav">
   <div class="nav__mark">BY <b>BRETON</b></div>
@@ -550,23 +568,31 @@
         <h2>Um retrato fiel de cada ambiente.</h2>
         <p style="color:var(--text-dim);">Imagens reais do empreendimento, sem retoques de imaginação.</p>
       </div>
-      <div class="gallery-grid reveal">
-        <figure class="gallery-item gallery-item--wide">
-          <img src="images/WhatsApp%20Image%202026-08-05%20at%2011.00.48%20(1).jpeg" alt="Piscina interna climatizada do By Breton" loading="lazy">
-          <figcaption>Piscina climatizada</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="images/WhatsApp%20Image%202026-08-05%20at%2011.00.46%20(1).jpeg" alt="Deck e solarium com vista para as montanhas" loading="lazy">
-          <figcaption>Deck e solarium</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="images/WhatsApp%20Image%202026-08-05%20at%2011.02.10.jpeg" alt="Hall privativo dos elevadores na garagem" loading="lazy">
-          <figcaption>Hall privativo dos elevadores</figcaption>
-        </figure>
-        <figure class="gallery-item gallery-item--wide">
-          <img src="images/WhatsApp%20Image%202026-08-05%20at%2011.00.48.jpeg" alt="Espaco gourmet com vista panoramica para o mar ao por do sol" loading="lazy">
-          <figcaption>Espaço gourmet com vista para o mar</figcaption>
-        </figure>
+      <div class="gallery-carousel reveal" id="galeriaCarousel">
+        <div class="gallery-track">
+          <figure class="gallery-slide">
+            <img src="images/WhatsApp%20Image%202026-08-05%20at%2011.00.48%20(1).jpeg" alt="Piscina interna climatizada do By Breton" loading="lazy">
+            <figcaption>Piscina climatizada</figcaption>
+          </figure>
+          <figure class="gallery-slide">
+            <img src="images/WhatsApp%20Image%202026-08-05%20at%2011.00.46%20(1).jpeg" alt="Deck e solarium com vista para as montanhas" loading="lazy">
+            <figcaption>Deck e solarium</figcaption>
+          </figure>
+          <figure class="gallery-slide">
+            <img src="images/WhatsApp%20Image%202026-08-05%20at%2011.02.10.jpeg" alt="Hall privativo dos elevadores na garagem" loading="lazy">
+            <figcaption>Hall privativo dos elevadores</figcaption>
+          </figure>
+          <figure class="gallery-slide">
+            <img src="images/WhatsApp%20Image%202026-08-05%20at%2011.00.48.jpeg" alt="Espaco gourmet com vista panoramica para o mar ao por do sol" loading="lazy">
+            <figcaption>Espaço gourmet com vista para o mar</figcaption>
+          </figure>
+        </div>
+        <div class="gallery-dots">
+          <button class="gallery-dot is-active" aria-label="Ir para foto 1"></button>
+          <button class="gallery-dot" aria-label="Ir para foto 2"></button>
+          <button class="gallery-dot" aria-label="Ir para foto 3"></button>
+          <button class="gallery-dot" aria-label="Ir para foto 4"></button>
+        </div>
       </div>
     </div>
   </section>
@@ -685,6 +711,25 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-visible'); });
   }, { threshold: 0.15 });
   document.querySelectorAll('.reveal, .tower, .amenity-grid').forEach(el => io.observe(el));
+
+
+  const galleryTrack = document.querySelector('.gallery-track');
+  const galleryDots = document.querySelectorAll('.gallery-dot');
+  if (galleryTrack && galleryDots.length) {
+    let slideIndex = 0;
+    const totalSlides = galleryDots.length;
+    const goToSlide = (i) => {
+      slideIndex = (i + totalSlides) % totalSlides;
+      galleryTrack.style.transform = 'translateX(-' + (slideIndex * 100) + '%)';
+      galleryDots.forEach((d, n) => d.classList.toggle('is-active', n === slideIndex));
+    };
+    let slideTimer = setInterval(() => goToSlide(slideIndex + 1), 4500);
+    const resetSlideTimer = () => { clearInterval(slideTimer); slideTimer = setInterval(() => goToSlide(slideIndex + 1), 4500); };
+    galleryDots.forEach((dot, n) => dot.addEventListener('click', () => { goToSlide(n); resetSlideTimer(); }));
+    const carouselEl = document.querySelector('.gallery-carousel');
+    carouselEl.addEventListener('mouseenter', () => clearInterval(slideTimer));
+    carouselEl.addEventListener('mouseleave', resetSlideTimer);
+  }
 </script>
 
 

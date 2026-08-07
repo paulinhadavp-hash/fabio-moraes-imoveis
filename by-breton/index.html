@@ -298,6 +298,29 @@
 
 
   /* ================= FICHA TÉCNICA ================= */
+  .condicoes{ background:var(--stone); }
+  .condicoes .section-head p{ font-style:italic; }
+  .price-block{ background:var(--paper); padding:1.6rem 1.4rem 2rem; margin-top:2.4rem; }
+  .price-block + .price-block{ margin-top:2rem; }
+  .price-block__title{ font-family:var(--display); font-weight:500; font-size:1.15rem; margin:0 0 1rem; }
+  .price-table{ width:100%; border-collapse:collapse; font-size:.86rem; }
+  .price-table th{ text-align:left; font-family:var(--mono); font-size:.66rem; text-transform:uppercase; letter-spacing:.06em; color:var(--bronze); padding:.6rem .7rem; border-bottom:1px solid var(--line); }
+  .price-table td{ padding:.7rem; border-bottom:1px solid var(--line); color:var(--ink); }
+  .price-table td:first-child, .price-table th:first-child{ padding-left:0; }
+  .price-table td.price, .price-table th:last-child{ font-family:var(--display); font-weight:500; color:var(--bronze); text-align:right; }
+  .price-table td:last-child{ text-align:right; }
+  .price-note{ margin-top:1rem; font-size:.78rem; color:var(--text-dim); }
+  .compare-panel{ background:var(--ocean); color:var(--paper); padding:2rem 1.8rem; margin-top:2.4rem; }
+  .compare-panel__title{ font-family:var(--mono); font-size:.7rem; text-transform:uppercase; letter-spacing:.1em; color:var(--bronze-l); margin:0 0 1rem; }
+  .compare-table{ width:100%; border-collapse:collapse; font-size:.84rem; }
+  .compare-table th{ text-align:left; font-family:var(--mono); font-size:.64rem; text-transform:uppercase; letter-spacing:.05em; color:rgba(250,248,244,.6); padding:.5rem .6rem; border-bottom:1px solid rgba(250,248,244,.2); }
+  .compare-table td{ padding:.6rem; border-bottom:1px solid rgba(250,248,244,.12); }
+  .compare-table td:last-child, .compare-table th:last-child{ text-align:right; }
+  .compare-table tr.is-marino td{ color:var(--bronze-l); font-weight:600; }
+  .compare-panel__foot{ margin-top:1.2rem; font-size:.82rem; color:rgba(250,248,244,.75); }
+  .table-scroll{ overflow-x:auto; }
+  @media (max-width:640px){ .price-table, .compare-table{ font-size:.78rem; } .price-table td, .price-table th, .compare-table td, .compare-table th{ padding:.5rem; } }
+
   .ficha{ background:var(--paper); }
   .ficha__grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:2.2rem 1.5rem; }
   .ficha__item span{ display:block; font-family:var(--mono); font-size:.68rem; text-transform:uppercase; letter-spacing:.08em; color:var(--bronze); margin-bottom:.5rem; }
@@ -384,6 +407,7 @@
     <a href="#lazer">Lazer</a>
     <a href="#galeria">Galeria</a>
     <a href="#localizacao">Localização</a>
+    <a href="#condicoes">Condições</a>
     <a class="nav__cta" href="https://wa.me/5521981716003?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Marino%2C%20Avenida%20Sobral%20Pinto%2C%204225%2C%20Barra%20da%20Tijuca" onclick="return gtag_report_conversion('https://wa.me/5521981716003?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Marino%2C%20Avenida%20Sobral%20Pinto%2C%204225%2C%20Barra%20da%20Tijuca');" target="_blank" rel="noopener">WhatsApp</a>
   </div>
 </nav>
@@ -498,6 +522,7 @@
           <div class="plan-card__specs">
             <div><b>135 m²</b>Área privativa</div>
             <div><b>2</b>Vagas de garagem</div>
+            <div><b>R$ 3.122.500</b>A partir de</div>
           </div>
         </article>
         <article class="plan-card">
@@ -507,6 +532,7 @@
           <div class="plan-card__specs">
             <div><b>200 m²</b>Área privativa</div>
             <div><b>2</b>Vagas de garagem</div>
+            <div><b>R$ 4.614.500</b>A partir de</div>
           </div>
         </article>
         <article class="plan-card">
@@ -516,6 +542,7 @@
           <div class="plan-card__specs">
             <div><b>290 m²</b>Área privativa</div>
             <div><b>4</b>Vagas de garagem</div>
+            <div><b>R$ 12.922.700</b>A partir de</div>
           </div>
         </article>
       </div>
@@ -614,6 +641,73 @@
       </div>
       <div class="local__map">
         <iframe src="https://maps.google.com/maps?q=Avenida%20Sobral%20Pinto%2C%204225%2C%20Barra%20da%20Tijuca&t=m&z=16&output=embed" title="Mapa: Avenida Sobral Pinto, 4225, Barra da Tijuca" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="condicoes" class="condicoes section-pad">
+    <div class="wrap">
+      <div class="section-head center reveal">
+        <p class="eyebrow">Condições Comerciais</p>
+        <h2>Entrada, parcelas e saldo. Sem letras miúdas.</h2>
+        <p>Referência de R$ 23 mil/m² (sem vista) e R$ 28 mil/m² (com vista) · Fluxo: 45% durante a obra + 55% de saldo para financiamento.</p>
+      </div>
+
+      <div class="price-block reveal">
+        <h3 class="price-block__title">Apartamentos sem vista</h3>
+        <div class="table-scroll">
+          <table class="price-table">
+            <thead>
+              <tr><th>Tipologia</th><th>Sinal (15%)</th><th>Mensais 35x (15%)</th><th>Semestrais 6x (15%)</th><th>Financiamento (55%)</th><th>Preço</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>3 suítes, 2 vagas, 135 m²</td><td>R$ 471.700</td><td>R$ 13.300</td><td>R$ 78.000</td><td>R$ 1.717.300</td><td class="price">R$ 3.122.500</td></tr>
+              <tr><td>4 suítes, 3 vagas, 200 m²</td><td>R$ 695.300</td><td>R$ 19.700</td><td>R$ 115.300</td><td>R$ 2.537.900</td><td class="price">R$ 4.614.500</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="price-note">Reajuste pelo INCC (FGV) até a expedição do habite-se; após, pelo IGP-M. Conclusão da obra prevista para setembro de 2029.</p>
+      </div>
+
+      <div class="price-block reveal">
+        <h3 class="price-block__title">Unidades com vista</h3>
+        <div class="table-scroll">
+          <table class="price-table">
+            <thead>
+              <tr><th>Tipologia</th><th>Sinal (15%)</th><th>Mensais 35x (15%)</th><th>Semestrais 6x (15%)</th><th>Financiamento (55%)</th><th>Preço</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>3 suítes, 2 vagas, 135 m²</td><td>R$ 573.600</td><td>R$ 16.200</td><td>R$ 95.000</td><td>R$ 2.090.700</td><td class="price">R$ 3.801.300</td></tr>
+              <tr><td>4 suítes, 3 vagas, 200 m²</td><td>R$ 845.600</td><td>R$ 24.000</td><td>R$ 140.400</td><td>R$ 3.089.700</td><td class="price">R$ 5.617.700</td></tr>
+              <tr><td>Cobertura 4 suítes, 4 vagas, 289 m²</td><td>R$ 1.941.800</td><td>R$ 55.300</td><td>R$ 323.000</td><td>R$ 7.107.400</td><td class="price">R$ 12.922.700</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="price-note">A vista 360° (mar, lagoa e Pedra da Gávea) é um diferencial raro na Barra. A cobertura linear com piscina privativa é um produto único na região.</p>
+      </div>
+
+      <div class="compare-panel reveal">
+        <p class="compare-panel__title">Marino x Mercado da Barra</p>
+        <div class="table-scroll">
+          <table class="compare-table">
+            <thead>
+              <tr><th>Condomínio</th><th>Condomínio/mês (est.)</th></tr>
+            </thead>
+            <tbody>
+              <tr class="is-marino"><td>Marino — 3 suítes</td><td>≈ R$ 1.500</td></tr>
+              <tr class="is-marino"><td>Marino — 4 suítes</td><td>≈ R$ 2.200</td></tr>
+              <tr class="is-marino"><td>Marino — Cobertura</td><td>≈ R$ 3.200</td></tr>
+              <tr><td>Barra Golden Green</td><td>R$ 19.772</td></tr>
+              <tr><td>Les Résidences de Monaco</td><td>R$ 8.138</td></tr>
+              <tr><td>Atto by Pininfarina</td><td>R$ 18.480</td></tr>
+              <tr><td>Rilo By Piero Lissoni</td><td>R$ 8.602</td></tr>
+              <tr><td>Les Résidences Saint Tropez</td><td>R$ 5.500</td></tr>
+              <tr><td>Cyano Exclusive Residences</td><td>R$ 24.000</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="compare-panel__foot">O Marino entrega o mesmo padrão de exclusividade dos empreendimentos vizinhos na Barra, com taxa de condomínio significativamente menor — mais imóvel, menos custo fixo. Valores estimados de acordo com orçamento enviado pela administradora.</p>
       </div>
     </div>
   </section>
@@ -735,4 +829,4 @@
 
 
 </body>
-</html>
+</html>"Adiciona condições comerciais e comparativo de condomínio"

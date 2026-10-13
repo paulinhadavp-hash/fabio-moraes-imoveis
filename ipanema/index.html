@@ -281,7 +281,7 @@ footer p+p{margin-top:10px}
     <div class="mapa-grid">
       <div class="mapa-box">
         <div class="mapa-tag" id="mapa-tag">Be in Rio Paul Redfern 41</div>
-        <iframe id="mapa" title="Mapa dos lançamentos em Ipanema" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        <iframe id="mapa-frame" title="Mapa dos lançamentos em Ipanema" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
           src="https://www.google.com/maps?q=Rua+Paul+Redfern,+41,+Ipanema,+Rio+de+Janeiro&z=16&output=embed"></iframe>
       </div>
       <div class="lista" id="lista">
@@ -357,7 +357,7 @@ footer p+p{margin-top:10px}
   });
 
   // mapa: troca o endereço sem recarregar a página
-  var frame=document.getElementById('mapa'), tag=document.getElementById('mapa-tag');
+  var frame=document.getElementById('mapa-frame'), tag=document.getElementById('mapa-tag');
   var botoes=document.querySelectorAll('#lista button');
   botoes.forEach(function(b){
     b.addEventListener('click',function(){

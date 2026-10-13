@@ -1,3 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Studios em Ipanema a 1 quadra da praia | Be in Rio</title>
+<meta name="description" content="Lançamento de studios em Ipanema a 1 quadra da praia: Be in Rio Paul Redfern 41, 26 apartamentos de 28 a 58 m². Para morar ou investir. Receba a tabela com o corretor Fábio Moraes.">
+
+<!--GTAG-->
+<!-- Google tag (mesma conta da campanha atual: mantém o histórico de conversões) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18361375790"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18361375790');
+</script>
+<!--/GTAG-->
+
+<link rel="preload" as="image" href="leblon-760x505.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Albert+Sans:wght@400;500;600;700&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Conceito: Ipanema à luz do dia. Fundo claro de areia, letras em bege forte (camelo), mar como único azul.
+   Assinatura: faixa em ondas (calçada portuguesa) entre as dobras. */
+:root{
+  --branco:#fdfcfa;
+  --areia:#f4eee3;
+  --areia2:#e9dfce;
+  --camelo:#8a6a40;
+  --camelo-esc:#6a4f2c;
+  --camelo-cl:#b79b6c;
+  --tinta:#34291e;
+  --suave:#7a6c5b;
+  --mar:#1c7389;
+  --linha:rgba(106,79,44,.22);
+  --wa:#24a35a;
+  --serif:"Instrument Serif","Times New Roman",serif;
+  --sans:"Albert Sans",system-ui,sans-serif;
+  --caps:"Jost","Albert Sans",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--tinta);background:var(--branco);-webkit-font-smoothing:antialiased;line-height:1.6}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--mar);outline-offset:3px}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:28px}
+.caps{font-family:var(--caps);font-weight:500;font-size:12px;letter-spacing:.24em;text-transform:uppercase}
+
+/* ===== DOBRA 1 ===== */
+.hero{position:relative;background:var(--areia);overflow:hidden}
+.hero-foto{position:absolute;top:0;left:0;right:0;height:max(58svh,440px);background:var(--areia2) url(leblon-760x505.webp) 52% 60%/cover no-repeat}
+.hero-foto:after{content:"";position:absolute;inset:0;background:
+  linear-gradient(180deg,rgba(30,22,12,.62) 0%,rgba(30,22,12,0) 28%),
+  linear-gradient(180deg,rgba(244,238,227,0) 58%,rgba(244,238,227,.9) 88%,var(--areia) 99%)}
+
+.topo{position:absolute;top:0;left:0;right:0;z-index:3;display:flex;align-items:center;justify-content:space-between;padding-block:26px;color:#fff}
+.topo.wrap{left:50%;right:auto;transform:translateX(-50%);width:100%}
+.marca{display:flex;align-items:baseline;gap:14px}
+.marca b{font-family:var(--serif);font-weight:400;font-style:italic;font-size:32px;line-height:1;text-shadow:0 1px 14px rgba(0,0,0,.35)}
+.marca span{font-family:var(--caps);font-size:11px;letter-spacing:.26em;text-transform:uppercase;text-shadow:0 1px 10px rgba(0,0,0,.4)}
+.topo a{display:inline-flex;align-items:center;gap:10px;font-family:var(--caps);font-weight:500;font-size:13px;letter-spacing:.14em;text-decoration:none;padding:11px 18px;border:1px solid rgba(255,255,255,.7);background:rgba(30,22,12,.18);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:.2s}
+.topo a:hover{background:#fff;color:var(--camelo-esc)}
+
+.hero-corpo{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1fr) 410px;gap:64px;align-items:start;padding-top:calc(max(58svh,440px) - 14px);padding-bottom:84px}
+.eyebrow{display:flex;align-items:center;gap:14px;color:var(--camelo);margin-bottom:22px}
+.eyebrow:before{content:"";width:44px;height:1px;background:var(--camelo)}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(44px,5.6vw,84px);line-height:.98;letter-spacing:-.015em;max-width:17ch;color:var(--camelo-esc);text-wrap:balance}
+h1 em{font-style:italic;color:var(--camelo)}
+.sub{font-size:clamp(17px,1.5vw,20px);color:var(--tinta);max-width:540px;margin-top:24px}
+.sub b{font-weight:600;color:var(--camelo-esc)}
+
+.hero-cta{display:none;margin-top:28px}
+.fatos{margin-top:34px;display:flex;flex-wrap:wrap;max-width:560px;border-top:1px solid var(--linha)}
+.fatos div{flex:1 1 150px;padding:18px 20px 0 0}
+.fatos b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(28px,3vw,38px);line-height:1;color:var(--camelo-esc)}
+.fatos span{display:block;font-family:var(--caps);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--suave);margin-top:8px}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;font-family:var(--caps);font-weight:500;font-size:14px;letter-spacing:.14em;text-transform:uppercase;padding:19px 28px;border-radius:2px;border:1px solid transparent;cursor:pointer;text-decoration:none;transition:transform .2s,background .2s,color .2s,box-shadow .2s}
+.btn svg{width:20px;height:20px;flex:none}
+.btn:hover{transform:translateY(-2px)}
+.btn-camelo{background:var(--camelo);color:#fff}
+.btn-camelo:hover{background:var(--camelo-esc);box-shadow:0 14px 30px rgba(106,79,44,.3)}
+.btn-borda{background:transparent;color:var(--camelo-esc);border-color:var(--camelo);padding:13px 20px;font-size:12.5px}
+.btn-borda:hover{background:var(--camelo);color:#fff}
+
+/* painel de conversão */
+.painel{position:relative;background:var(--branco);padding:34px 32px 30px;box-shadow:0 30px 70px rgba(70,50,24,.22);border-top:3px solid var(--camelo)}
+.painel .caps{color:var(--camelo);display:block;margin-bottom:12px}
+.painel h2{font-family:var(--serif);font-weight:400;font-size:34px;line-height:1.02;color:var(--camelo-esc)}
+.painel ul{list-style:none;margin:22px 0 0;border-top:1px solid var(--linha)}
+.painel li{display:flex;gap:14px;align-items:center;padding:13px 0;border-bottom:1px solid var(--linha);font-size:15.5px}
+.painel li:before{content:"";flex:none;width:7px;height:7px;background:var(--camelo);transform:rotate(45deg)}
+.painel .btn{width:100%;margin-top:24px;animation:brilho 3.2s 1.8s infinite}
+@keyframes brilho{0%,100%{box-shadow:0 0 0 0 rgba(138,106,64,0)}50%{box-shadow:0 0 0 8px rgba(138,106,64,.2)}}
+.painel .micro{font-size:12.5px;color:var(--suave);margin-top:14px;text-align:center}
+
+/* assinatura: faixa em ondas */
+.ondas{height:34px;background-color:var(--areia);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='34' viewBox='0 0 96 34'%3E%3Cg fill='none' stroke='%238a6a40' stroke-opacity='.55' stroke-width='3.2'%3E%3Cpath d='M0 9 C12 -3 36 -3 48 9 S84 21 96 9'/%3E%3Cpath d='M0 25 C12 13 36 13 48 25 S84 37 96 25'/%3E%3C/g%3E%3C/svg%3E");background-repeat:repeat-x}
+
+/* ===== INTRODUÇÃO ===== */
+.intro-sec{background:var(--branco);padding:104px 0 88px}
+.intro-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:72px;align-items:center}
+.intro-sec .caps{color:var(--camelo);display:flex;align-items:center;gap:14px}
+.intro-sec .caps:before{content:"";width:44px;height:1px;background:var(--camelo)}
+.intro-sec h2{font-family:var(--serif);font-weight:400;font-size:clamp(36px,4.8vw,64px);line-height:1;letter-spacing:-.012em;color:var(--camelo-esc);margin-top:20px;text-wrap:balance}
+.intro-sec h2 em{font-style:italic;color:var(--camelo)}
+.intro-sec p{font-size:18px;margin-top:22px;max-width:560px}
+.perfis{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:38px;border-top:1px solid var(--linha);max-width:600px}
+.perfis div{padding:22px 24px 0 0}
+.perfis div+div{padding-left:24px;border-left:1px solid var(--linha)}
+.perfis b{display:block;font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.05;color:var(--camelo-esc)}
+.perfis span{display:block;font-size:15px;color:var(--suave);margin-top:8px}
+
+/* ===== MAPA + LANÇAMENTOS ===== */
+.sec{background:var(--areia);padding:96px 0 0}
+.sec .caps{color:var(--camelo);display:flex;align-items:center;gap:14px}
+.sec .caps:before{content:"";width:44px;height:1px;background:var(--camelo)}
+.sec h2{font-family:var(--serif);font-weight:400;font-size:clamp(36px,5vw,64px);line-height:1;letter-spacing:-.012em;color:var(--camelo-esc);margin-top:18px;max-width:16ch;text-wrap:balance}
+.sec h2 em{font-style:italic;color:var(--camelo)}
+.sec .intro{font-size:17px;color:var(--suave);margin-top:20px;max-width:560px}
+
+.mapa-grid{display:grid;grid-template-columns:1.3fr .7fr;margin-top:44px;border:1px solid var(--linha);background:var(--branco)}
+.mapa-box{position:relative;min-height:440px;background:var(--areia2)}
+.mapa-box iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.mapa-tag{position:absolute;left:16px;top:16px;z-index:2;background:var(--camelo-esc);color:#fff;font-family:var(--caps);font-size:11px;letter-spacing:.2em;text-transform:uppercase;padding:9px 14px}
+.lista{display:flex;flex-direction:column;border-left:1px solid var(--linha)}
+.lista button{all:unset;box-sizing:border-box;cursor:pointer;display:flex;gap:16px;align-items:center;padding:20px 22px;border-bottom:1px solid var(--linha);flex:1;transition:background .2s}
+.lista button:last-child{border-bottom:0}
+.lista button:hover{background:var(--areia)}
+.lista button[aria-pressed="true"]{background:var(--camelo);color:#fff}
+.lista button:focus-visible{outline:2px solid var(--mar);outline-offset:-4px}
+.lista .n{flex:none;font-family:var(--serif);font-size:30px;line-height:1;color:var(--camelo);width:26px}
+.lista button[aria-pressed="true"] .n{color:#f1e2c6}
+.lista b{display:block;font-family:var(--serif);font-weight:400;font-size:23px;line-height:1.05}
+.lista span.e{display:block;font-size:13px;opacity:.75;margin-top:3px}
+
+.fotos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fotos figure{position:relative;aspect-ratio:1;overflow:hidden;background:var(--areia2)}
+.fotos img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.fotos figure:hover img{transform:scale(1.05)}
+.fotos figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 16px 14px;background:linear-gradient(0deg,rgba(40,28,14,.7),rgba(40,28,14,0));color:#fff;font-family:var(--caps);font-size:11px;letter-spacing:.2em;text-transform:uppercase}
+.linhas{margin-top:72px;border-top:1px solid var(--camelo)}
+.linha{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,.7fr) minmax(0,.7fr) minmax(0,.6fr) auto;gap:24px;align-items:center;padding:28px 0;border-bottom:1px solid var(--linha)}
+.linha.dest{background:linear-gradient(90deg,rgba(138,106,64,.14),rgba(138,106,64,0) 75%);margin:0 -20px;padding-left:20px;padding-right:20px}
+.linha h3{font-family:var(--serif);font-weight:400;font-size:clamp(26px,2.6vw,36px);line-height:1;color:var(--camelo-esc)}
+.linha .end{font-size:14px;color:var(--suave);margin-top:6px}
+.linha .tag{display:inline-block;font-family:var(--caps);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--mar);margin-bottom:8px}
+.linha .k{font-family:var(--caps);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--suave);display:block;margin-bottom:4px}
+.linha .v{font-family:var(--serif);font-size:26px;line-height:1.05;color:var(--camelo-esc)}
+.linha .nota{font-size:13px;color:var(--suave);margin-top:6px}
+
+/* fecho */
+.fecho{margin-top:96px;background:var(--branco);display:block;text-align:center}
+.fecho-txt{padding:96px 28px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:0}
+.fecho h3{font-family:var(--serif);font-weight:400;font-size:clamp(36px,4.6vw,62px);line-height:1;letter-spacing:-.01em;color:var(--camelo-esc);max-width:18ch}
+.fecho h3 em{font-style:italic;color:var(--camelo)}
+.fecho p{margin-top:18px;max-width:440px;color:var(--suave);font-size:17px}
+.fecho .btn{margin-top:30px}
+
+footer{background:var(--areia);color:var(--suave);font-size:12px;line-height:1.65;padding:0 0 110px}
+footer .wrap{padding-top:34px;border-top:1px solid var(--linha)}
+footer p+p{margin-top:10px}
+
+.fab{position:fixed;right:22px;bottom:22px;z-index:60;display:flex;align-items:center;gap:10px;height:60px;padding:0 24px 0 18px;border-radius:999px;background:var(--wa);color:#fff;text-decoration:none;font-weight:600;font-size:15px;box-shadow:0 14px 34px rgba(0,0,0,.3)}
+.fab svg{width:28px;height:28px;flex:none}
+.fab:before{content:"";position:absolute;inset:0;border-radius:inherit;border:2px solid var(--wa);animation:onda 2.4s infinite}
+@keyframes onda{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.35);opacity:0}}
+
+@media (max-width:1040px){
+  .linha{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px 24px}
+  .linha .acao{grid-column:1/-1}
+  .linha .acao .btn{width:100%}
+}
+@media (max-width:960px){
+  .hero-foto{height:max(42svh,320px);background-position:54% 62%}
+  .hero-corpo{grid-template-columns:1fr;gap:40px;padding-top:calc(max(42svh,320px) - 6px);padding-bottom:60px}
+  .intro-grid{grid-template-columns:1fr;gap:56px}
+  .mapa-grid{grid-template-columns:1fr}
+  .mapa-box{min-height:340px}
+  .lista{border-left:0;border-top:1px solid var(--linha)}
+  .fecho-txt{padding:72px 24px}
+  .fab{width:60px;padding:0;justify-content:center}
+  .fab span{display:none}
+  .topo a span{display:none}
+  .topo a{padding:11px 13px}
+  .hero-cta{display:inline-flex}
+}
+@media (max-width:620px){
+  .wrap{padding-inline:20px}
+  .marca span{display:none}
+  .hero-cta{width:100%}
+  .fatos div{flex:1 1 30%;padding-right:8px}
+  .fatos b{font-size:24px}
+  .painel{padding:30px 22px 26px}
+  .perfis{grid-template-columns:1fr}
+  .perfis div+div{padding-left:0;border-left:0;border-top:1px solid var(--linha);margin-top:22px}
+  .linha.dest{margin:0 -20px}
+  .fotos{gap:10px}
+  .fecho .btn{width:100%}
+  .fecho-txt{padding:56px 20px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- DOBRA 1 -->
+<section class="hero">
+  <div class="hero-foto" role="img" aria-label="Praia de Ipanema ao entardecer, com o Morro Dois Irmãos ao fundo"></div>
+
+  <div class="wrap topo">
+    <div class="marca"><b>Be in Rio</b><span>Paul Redfern 41 · Ipanema</span></div>
+    <a class="js-wa" data-ref="IPA-TOPO" href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11 11 0 0 0 3.2 16.8L2 22l5.3-1.4A11 11 0 1 0 20.5 3.5zM12 20.1a9 9 0 0 1-4.6-1.3l-.3-.2-3.1.8.8-3-.2-.3A9 9 0 1 1 12 20.1zm5-6.7c-.3-.1-1.6-.8-1.9-.9s-.4-.1-.6.1-.7.9-.8 1-.3.2-.6 0a7.4 7.4 0 0 1-3.7-3.2c-.3-.5.3-.4.8-1.4a.5.5 0 0 0 0-.5l-.9-2c-.2-.5-.5-.5-.6-.5h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg><span>(21) 98171-6003</span></a>
+  </div>
+
+  <div class="wrap hero-corpo">
+    <div>
+      <div class="eyebrow caps">Lançamento em Ipanema · previsão set/26</div>
+      <h1>Studio em Ipanema a <em>1 quadra da praia.</em></h1>
+      <p class="sub">More ou invista no bairro mais desejado do Rio de Janeiro. <b>Be in Rio Paul Redfern 41:</b> studios de 28 a 58 m², entre a praia e a Lagoa.</p>
+      <a class="btn btn-camelo hero-cta js-wa" data-ref="IPA-HERO-MOBILE" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11 11 0 0 0 3.2 16.8L2 22l5.3-1.4A11 11 0 1 0 20.5 3.5zM12 20.1a9 9 0 0 1-4.6-1.3l-.3-.2-3.1.8.8-3-.2-.3A9 9 0 1 1 12 20.1zm5-6.7c-.3-.1-1.6-.8-1.9-.9s-.4-.1-.6.1-.7.9-.8 1-.3.2-.6 0a7.4 7.4 0 0 1-3.7-3.2c-.3-.5.3-.4.8-1.4a.5.5 0 0 0 0-.5l-.9-2c-.2-.5-.5-.5-.6-.5h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>Pedir a tabela no WhatsApp</a>
+      <div class="fatos" aria-label="Resumo do empreendimento">
+        <div><b>1 quadra</b><span>da praia</span></div>
+        <div><b>28 a 58 m²</b><span>metragens</span></div>
+        <div><b>26</b><span>unidades</span></div>
+      </div>
+    </div>
+
+    <aside class="painel" aria-labelledby="ctitulo">
+      <span class="caps">Direto com o corretor</span>
+      <h2 id="ctitulo">Receba a tabela em primeira mão</h2>
+      <ul>
+        <li>Tabela e condições de lançamento</li>
+        <li>Plantas de 28 a 58 m²</li>
+        <li>Andares e unidades disponíveis</li>
+      </ul>
+      <a class="btn btn-camelo js-wa" data-ref="IPA-CARTAO" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11 11 0 0 0 3.2 16.8L2 22l5.3-1.4A11 11 0 1 0 20.5 3.5zM12 20.1a9 9 0 0 1-4.6-1.3l-.3-.2-3.1.8.8-3-.2-.3A9 9 0 1 1 12 20.1zm5-6.7c-.3-.1-1.6-.8-1.9-.9s-.4-.1-.6.1-.7.9-.8 1-.3.2-.6 0a7.4 7.4 0 0 1-3.7-3.2c-.3-.5.3-.4.8-1.4a.5.5 0 0 0 0-.5l-.9-2c-.2-.5-.5-.5-.6-.5h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>Pedir a tabela no WhatsApp</a>
+      <p class="micro">Fábio Moraes · CRECI 83862 · resposta rápida</p>
+    </aside>
+  </div>
+</section>
+
+<div class="ondas" aria-hidden="true"></div>
+
+<!-- INTRODUÇÃO -->
+<section class="intro-sec" id="ipanema">
+  <div class="wrap intro-grid">
+    <div>
+      <span class="caps">Por que Ipanema</span>
+      <h2>Morar ou investir no bairro mais desejado do Rio, <em>a 1 quadra do mar.</em></h2>
+      <p>Ipanema reúne o que o mercado mais valoriza: praia, beleza, sofisticação e um endereço que o mundo inteiro conhece. Studios compactos, bem localizados e com alto potencial de renda de locação para quem quer investir, e a vida de calçadão para quem quer morar.</p>
+      <div class="perfis">
+        <div><b>Para investir</b><span>Endereço de grande procura para locação, em metragens compactas e fáceis de administrar.</span></div>
+        <div><b>Para morar</b><span>Praia a 1 quadra, comércio a pé e a Lagoa por perto, sem abrir mão de nada.</span></div>
+      </div>
+    </div>
+    <div class="fotos" aria-label="Fotos de Ipanema">
+      <figure><img src="if-it-s-your-first-time.jpg" alt="Praia de Ipanema vista do calçadão, com o Morro Dois Irmãos" loading="lazy" style="object-position:30% 50%"><figcaption>Praia de Ipanema</figcaption></figure>
+      <figure><img src="ipanema.jpg" alt="Calçadão de Ipanema com o desenho de ondas" loading="lazy" style="object-position:20% 60%"><figcaption>Calçadão</figcaption></figure>
+      <figure><img src="sunset-at-the-beach.jpg" alt="Onda quebrando na praia de Ipanema ao entardecer" loading="lazy"><figcaption>Fim de tarde</figcaption></figure>
+      <figure><img src="o-rio-inventou-a-economia-da-experiencia-antes-de-o-mercado-dar-esse-nome-para-ela-400x256.webp" alt="Orla de Ipanema ao pôr do sol" loading="lazy" style="object-position:70% 50%"><figcaption>Orla ao pôr do sol</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<div class="ondas" aria-hidden="true"></div>
+
+<!-- MAPA + LANÇAMENTOS -->
+<section class="sec" id="mapa">
+  <div class="wrap">
+    <span class="caps">Lançamentos em Ipanema</span>
+    <h2>Cinco endereços, <em>um só bairro.</em></h2>
+    <p class="intro">Escolha um endereço para ver a localização. O Paul Redfern 41 fica a 1 quadra da praia.</p>
+
+    <div class="mapa-grid">
+      <div class="mapa-box">
+        <div class="mapa-tag" id="mapa-tag">Be in Rio Paul Redfern 41</div>
+        <iframe id="mapa" title="Mapa dos lançamentos em Ipanema" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Rua+Paul+Redfern,+41,+Ipanema,+Rio+de+Janeiro&z=16&output=embed"></iframe>
+      </div>
+      <div class="lista" id="lista">
+        <button type="button" aria-pressed="true" data-q="Rua Paul Redfern, 41, Ipanema, Rio de Janeiro" data-nome="Be in Rio Paul Redfern 41"><span class="n">1</span><span><b>Be in Rio Paul Redfern 41</b><span class="e">Rua Paul Redfern, 41</span></span></button>
+        <button type="button" aria-pressed="false" data-q="Rua Barão de Jaguaripe, 404, Ipanema, Rio de Janeiro" data-nome="Be in Rio Torre Eiffel"><span class="n">2</span><span><b>Be in Rio Torre Eiffel</b><span class="e">Rua Barão de Jaguaripe, 404</span></span></button>
+        <button type="button" aria-pressed="false" data-q="Rua Barão de Jaguaripe, 225, Ipanema, Rio de Janeiro" data-nome="Barão de Jaguaripe, 225"><span class="n">3</span><span><b>Barão de Jaguaripe, 225</b><span class="e">Rua Barão de Jaguaripe, 225</span></span></button>
+        <button type="button" aria-pressed="false" data-q="Rua Nascimento Silva, 45, Ipanema, Rio de Janeiro" data-nome="Nascimento Silva, 45"><span class="n">4</span><span><b>Nascimento Silva, 45</b><span class="e">Rua Nascimento Silva, 45</span></span></button>
+        <button type="button" aria-pressed="false" data-q="Rua Redentor, 14, Ipanema, Rio de Janeiro" data-nome="Redentor, 14"><span class="n">5</span><span><b>Redentor, 14</b><span class="e">Rua Redentor, 14</span></span></button>
+      </div>
+    </div>
+
+    <div class="linhas">
+      <article class="linha dest">
+        <div><span class="tag">Em destaque</span><h3>Be in Rio Paul Redfern 41</h3><div class="end">Rua Paul Redfern, 41 · a 1 quadra da praia</div></div>
+        <div><span class="k">Metragem</span><span class="v">28 a 58 m²</span></div>
+        <div><span class="k">Unidades</span><span class="v">26</span></div>
+        <div><span class="k">Previsão</span><span class="v">set/26</span></div>
+        <div class="acao"><a class="btn btn-camelo js-wa" data-ref="IPA-CARD-PAULREDFERN41" data-emp="o Be in Rio Paul Redfern 41" href="#">Pedir a tabela</a></div>
+      </article>
+      <article class="linha"><div><h3>Be in Rio Torre Eiffel</h3><div class="end">Rua Barão de Jaguaripe, 404</div><div class="nota">Rooftop com piscina, área gourmet, academia e lounge.</div></div><div><span class="k">Metragem</span><span class="v">32 a 74 m²</span></div><div><span class="k">Unidades</span><span class="v">22</span></div><div><span class="k">Previsão</span><span class="v">ago/26</span></div><div class="acao"><a class="btn btn-borda js-wa" data-ref="IPA-CARD-TORREEIFFEL404" data-emp="o Be in Rio Torre Eiffel (Barão de Jaguaripe, 404)" href="#">Pedir a tabela</a></div></article>
+      <article class="linha"><div><h3>Barão de Jaguaripe, 225</h3><div class="end">Rua Barão de Jaguaripe, 225</div></div><div><span class="k">Metragem</span><span class="v">33 a 70 m²</span></div><div><span class="k">Unidades</span><span class="v">23</span></div><div><span class="k">Previsão</span><span class="v">ago/26</span></div><div class="acao"><a class="btn btn-borda js-wa" data-ref="IPA-CARD-JAGUARIPE225" data-emp="o lançamento da Barão de Jaguaripe, 225" href="#">Pedir a tabela</a></div></article>
+      <article class="linha"><div><h3>Nascimento Silva, 45</h3><div class="end">Rua Nascimento Silva, 45</div></div><div><span class="k">Metragem</span><span class="v">28 a 68 m²</span></div><div><span class="k">Unidades</span><span class="v">86</span></div><div><span class="k">Previsão</span><span class="v">out/26</span></div><div class="acao"><a class="btn btn-borda js-wa" data-ref="IPA-CARD-NASCIMENTOSILVA45" data-emp="o lançamento da Nascimento Silva, 45" href="#">Pedir a tabela</a></div></article>
+      <article class="linha"><div><h3>Redentor, 14</h3><div class="end">Rua Redentor, 14</div></div><div><span class="k">Metragem</span><span class="v">40 a 125 m²</span></div><div><span class="k">Unidades</span><span class="v">24</span></div><div><span class="k">Previsão</span><span class="v">out/26</span></div><div class="acao"><a class="btn btn-borda js-wa" data-ref="IPA-CARD-REDENTOR14" data-emp="o lançamento da Redentor, 14" href="#">Pedir a tabela</a></div></article>
+    </div>
+
+  </div>
+
+  <div class="fecho">
+    <div class="fecho-txt">
+      <span class="caps" style="color:var(--camelo)">Lista do corretor</span>
+      <h3 style="margin-top:18px">Não achou a metragem <em>ideal?</em></h3>
+      <p>Entre na lista do Fábio e receba a tabela de todos os lançamentos de Ipanema antes de todo mundo.</p>
+      <a class="btn btn-camelo js-wa" data-ref="IPA-FECHO" href="#">Entrar na lista no WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Previsões de lançamento, metragens, número de unidades e condições são informações da incorporadora, preliminares e sujeitas a alteração sem aviso prévio. Preços, plantas e disponibilidade são informados pelo corretor. Rentabilidade, valorização e demanda de locação dependem das condições de mercado e não são garantidas. "A 1 quadra da praia" refere-se à distância aproximada a pé até a orla de Ipanema.</p>
+    <p>Imagens ilustrativas. Be in Rio é marca de seus respectivos titulares.</p>
+    <p>Página de divulgação do corretor Fábio Moraes · CRECI 83862 · (21) 98171-6003. Não é o site oficial da incorporadora.</p>
+  </div>
+</footer>
+
+<a class="fab js-wa" data-ref="IPA-FLUTUANTE" href="#" aria-label="Falar com o corretor no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11 11 0 0 0 3.2 16.8L2 22l5.3-1.4A11 11 0 1 0 20.5 3.5zM12 20.1a9 9 0 0 1-4.6-1.3l-.3-.2-3.1.8.8-3-.2-.3A9 9 0 1 1 12 20.1zm5-6.7c-.3-.1-1.6-.8-1.9-.9s-.4-.1-.6.1-.7.9-.8 1-.3.2-.6 0a7.4 7.4 0 0 1-3.7-3.2c-.3-.5.3-.4.8-1.4a.5.5 0 0 0 0-.5l-.9-2c-.2-.5-.5-.5-.6-.5h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg><span>Fale com o corretor</span></a>
+
+<script>
+(function(){
+  var FONE='5521981716003';
+  window.dataLayer=window.dataLayer||[];
+
+  function msg(a){
+    var emp=a.getAttribute('data-emp');
+    var ref=a.getAttribute('data-ref')||'IPA';
+    if(emp){
+      return 'Olá, Fábio! Vi '+emp+' em Ipanema no seu site e quero receber a tabela em primeira mão. ['+ref+']';
+    }
+    return 'Olá, Fábio! Vi o Be in Rio Paul Redfern 41 em Ipanema (studios de 28 a 58 m², a 1 quadra da praia) e quero receber a tabela em primeira mão. ['+ref+']';
+  }
+
+  document.querySelectorAll('.js-wa').forEach(function(a){
+    var ref=a.getAttribute('data-ref')||'IPA';
+    a.href='https://wa.me/'+FONE+'?text='+encodeURIComponent(msg(a));
+    a.target='_blank'; a.rel='noopener';
+    a.addEventListener('click',function(){
+      dataLayer.push({event:'clique_whatsapp',origem:ref});
+      // conversão do Google Ads (mesma da campanha atual)
+      if(typeof gtag==='function'){
+        gtag('event','conversion',{'send_to':'AW-18361375790/TNr4CNWts9scEK64sbNE','value':1.0,'currency':'BRL'});
+      }
+    });
+  });
+
+  // mapa: troca o endereço sem recarregar a página
+  var frame=document.getElementById('mapa'), tag=document.getElementById('mapa-tag');
+  var botoes=document.querySelectorAll('#lista button');
+  botoes.forEach(function(b){
+    b.addEventListener('click',function(){
+      botoes.forEach(function(x){x.setAttribute('aria-pressed','false');});
+      b.setAttribute('aria-pressed','true');
+      frame.src='https://www.google.com/maps?q='+encodeURIComponent(b.getAttribute('data-q'))+'&z=16&output=embed';
+      tag.textContent=b.getAttribute('data-nome');
+    });
+  });
+})();
+</script>
+</body>
+</html>
 <!doctype html>
 <html lang="pt-BR">
 <head>
